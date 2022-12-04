@@ -12,7 +12,7 @@ function RoutesTree() {
           <Route path="/" element={<Home />}/>
           <Route path="/home" element={<Home />}/>
           <Route path="/about" element={<About />}/>
-          <Route path="/accomodation" element={<Accommodation />}/>
+          <Route path="/accommodation/:id" element={<Accommodation />}/>
           <Route path='*' element={<NotFound />} />
         </Routes>
       </Router>
