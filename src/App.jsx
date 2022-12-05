@@ -3,7 +3,9 @@ import RoutesTree from './components/routes/Routes';
 
 function App() {
   return (
+    <>
     <RoutesTree />
+    </>
   );
 }
 

@@ -1,10 +1,10 @@
 import React from "react";
-import { Link, useParams } from 'react-router-dom'
-import accommodations from '../../data/accommodations.json'
+import { Link, useParams } from 'react-router-dom';
+import accommodations from '../../data/accommodations.json';
 
 function Accommodation() {
     const {id} = useParams()
-    const validId = accommodations.find(validID => validID.id === id)
+    const validId = accommodations.find(validId => validId.id === id)
     if (!validId) {
         return (
             <section>
