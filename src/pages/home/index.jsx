@@ -1,20 +1,22 @@
 import React from 'react';
-import BannerHome from '../../components/bannerHome/index';
-import CardsHome from './cardsHome';
-import Header from '../../layouts/Header/index';
-import Footer from '../../layouts/Footer/index';
+import Header from '../../Layouts/Header/index';
+import BannerHome from '../../Pages/Home/BannerHome/index';
+import CardsHome from './CardsHome/index';
+import Footer from '../../Layouts/Footer/index';
 
 
 
 
 function Home() {
     return (
-        <main>
+        <>
             <Header />
-            <BannerHome />
-            <CardsHome />
+            <main>
+                <BannerHome />
+                <CardsHome />
+            </main>
             <Footer />
-        </main>
+        </>
     )
 }
 

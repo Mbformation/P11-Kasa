@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from '../../layouts/Header/index';
-import BannerAbout from './bannerAbout';
-import CollapsesAbout from './collapsesAbout/index'
-import Footer from '../../layouts/Footer/index';
+import Header from '../../Layouts/Header/index';
+import BannerAbout from './BannerAbout/index';
+import CollapsiblesAbout from './CollapsiblesAbout/index';
+import Footer from '../../Layouts/Footer/index';
 
 
 function About() {
@@ -10,7 +10,7 @@ function About() {
         <main>
         <Header />
         <BannerAbout />
-        <CollapsesAbout />
+        <CollapsiblesAbout />
         <Footer />
         </main>
     )

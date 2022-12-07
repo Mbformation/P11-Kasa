@@ -1,13 +1,13 @@
 import React from 'react';
-import CardAccommodation from '../../../components/cardAccommodation/index';
-import accommodations from '../../../data/accommodations.json'
+import CardTemplate from '../../../TemplateComponents/CardTemplate/index';
+import accommodations from '../../../Data/accommodations.json';
 
 function CardsHome() {
     return (
         <section>
             <ul>
                 {accommodations.map(({ id, title, cover}) => (
-                    <CardAccommodation 
+                    <CardTemplate 
                         key={id}
                         id={id}
                         title={title}

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from "react-router-dom"
 
-function CardAccommodation({ id, title, cover}) {
+function CardTemplate({ id, title, cover}) {
     return (
-        <li key={id}>
+        <li>
             <Link to={`/accommodation/${id}`}>
             <article>
                 <img src={cover} alt={title} />
@@ -14,5 +14,5 @@ function CardAccommodation({ id, title, cover}) {
     )
 }
 
-export default CardAccommodation;
+export default CardTemplate;
 

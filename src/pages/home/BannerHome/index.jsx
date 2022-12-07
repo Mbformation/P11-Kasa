@@ -1,6 +1,6 @@
 import React from 'react';
-import BannerTemplate from '../../layouts/bannerTemplate';
-import ImgBannerHomePath from '../../assets/images/img-banner-home.webp';
+import BannerTemplate from '../../../TemplateComponents/BannerTemplate/index';
+import ImgBannerHomePath from '../../../Assets/Images/imgBannerHome.webp';
 
 function BannerHome() {
     return (

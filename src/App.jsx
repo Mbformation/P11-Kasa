@@ -1,5 +1,5 @@
 import React from 'react';
-import RoutesTree from './components/routes/Routes';
+import RoutesTree from './Routes/index';
 
 function App() {
   return (

@@ -1,19 +1,16 @@
 import React from "react";
-import { Link, useParams } from 'react-router-dom';
-import accommodations from '../../data/accommodations.json';
+import { Navigate, useParams } from 'react-router-dom';
+import accommodations from '../../Data/accommodations.json';
 
 function Accommodation() {
     const {id} = useParams()
     const validId = accommodations.find(validId => validId.id === id)
+
     if (!validId) {
         return (
-            <section>
-                <h2>
-                    Ce logement n'existe pas ou n'est plus disponible
-                </h2>
-                <Link to="/">Retour
-                </Link>
-            </section>
+            
+            <Navigate replace to="/notfound" />
+            
         )
     }
     return (
@@ -24,3 +21,5 @@ function Accommodation() {
 }
 
 export default Accommodation;
+
+

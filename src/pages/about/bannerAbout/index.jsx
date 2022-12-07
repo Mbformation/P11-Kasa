@@ -1,6 +1,6 @@
 import React from 'react';
-import BannerTemplate from '../../../layouts/bannerTemplate/index';
-import ImgBannerAboutPath from '../../../assets/images/img-banner-about.webp';
+import BannerTemplate from '../../../TemplateComponents/BannerTemplate/index';
+import ImgBannerAboutPath from '../../../Assets/Images/imgBannerAbout.webp';
 
 function BannerAbout() {
     return (
