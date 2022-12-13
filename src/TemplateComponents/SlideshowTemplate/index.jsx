@@ -24,23 +24,35 @@ function SlideshowTemplate({pictures, title})
         }
     }
     
-    return(
-        <div>
-            {pictures.map((picture, i) => (
-                (index === i) && 
-                <img key={i} src={picture} alt={title} /> 
-            ))}
-            {pictures.length > 1 && 
-            (
-            <>
-            <button className="button-previous" onClick={() => previous()}>avbd
-            <svg width="28" height="17" viewBox="0 0 28 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M24.84 16.3466L27.2 13.9733L14 0.786621L0.80001 13.9866L3.16001 16.3466L14 5.50662L24.84 16.3466Z" fill="white"/>
-</svg></button>
-            <button className="button-next" onClick={() => next()}>next</button>
-            </>
-            )}
-        </div>
+    return (
+        <>
+            <div className="slideshow-container">
+                <div className="carousel">
+                    <div className="carousel-inner" style={{transform: `translateX(${-index * 100}%)`}}>
+                        {pictures.map((picture, i) => (
+                            <div className="carousel-item">
+                                <img key={i} src={picture} alt={title} />
+                            </div> 
+                        ))}
+                    </div>
+                </div>
+                {pictures.length > 1 && (
+                    <div>
+                        <button className="carousel-control left" onClick={() => previous()}>
+                            <svg viewBox="0 0 48 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M47.04 7.78312L39.92 0.703125L0.359985 40.3031L39.96 79.9031L47.04 72.8231L14.52 40.3031L47.04 7.78312Z" fill="white"/>
+                            </svg>
+                        </button>
+                        <button className="carousel-control right" onClick={() => next()}>
+                            <svg viewBox="0 0 48 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.960022 72.3458L8.04002 79.4258L47.64 39.8258L8.04002 0.22583L0.960022 7.30583L33.48 39.8258L0.960022 72.3458Z" fill="white"/>
+                            </svg>
+                        </button>
+                        <div className="carousel-counter">{index + 1}/{pictures.length}</div>
+                    </div>
+                )}
+            </div>
+        </>
     )
 }
 

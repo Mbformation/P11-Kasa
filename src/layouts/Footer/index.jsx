@@ -4,8 +4,10 @@ import logoFooter from '../../Assets/Logos/logoFooter.png';
 function Footer() {
     return(
         <footer>
-            <img src={logoFooter} alt='logo-kasa' />
-            <p>© 2022 Kasa. All rights reserved</p>
+            <div className="wrapper">
+                <img src={logoFooter} alt='logo-kasa' />
+                <p>© 2022 Kasa. All rights reserved</p>
+            </div>
         </footer>
     )
 

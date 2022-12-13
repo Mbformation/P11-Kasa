@@ -5,27 +5,29 @@ import logoHeader from '../../Assets/Logos/logoHeader.png';
 function Header() {
     return(
         <header>
-            <Link to="/"><img src={logoHeader} alt='logo-kasa' /></Link>
-            <nav>
-                <ul>
-                    <li>
-                        <NavLink 
-                            to="/home"
-                            className={({ isActive }) => (isActive ? 'link active' : 'link')}
-                        >
-                        Accueil
-                        </NavLink>    
-                    </li>
-                    <li>
-                        <NavLink 
-                            to="/about"
-                            className={({ isActive }) => (isActive ? 'link active' : 'link')}
-                        >
-                        À propos
-                        </NavLink> 
-                    </li>
-                </ul>
-            </nav>
+            <div className="wrapper">
+                <Link to="/"><img src={logoHeader} alt='logo-kasa' /></Link>
+                <nav>
+                    <ul>
+                        <li>
+                            <NavLink 
+                                to="/home"
+                                className={({ isActive }) => (isActive ? 'link active' : 'link')}
+                            >
+                            Accueil
+                            </NavLink>    
+                        </li>
+                        <li>
+                            <NavLink 
+                                to="/about"
+                                className={({ isActive }) => (isActive ? 'link active' : 'link')}
+                            >
+                            À propos
+                            </NavLink> 
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </header>
          
 

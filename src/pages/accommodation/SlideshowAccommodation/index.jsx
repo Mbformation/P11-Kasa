@@ -5,14 +5,10 @@ import SlideshowTemplate from "../../../TemplateComponents/SlideshowTemplate/ind
 
 function SlideshowAccommodation({accommodation}) {
     return(
-        <main>
-            <div>
                 <SlideshowTemplate
                 pictures={accommodation.pictures}
                 title={accommodation.title}
                  />
-            </div>
-        </main>
     )
 }
 

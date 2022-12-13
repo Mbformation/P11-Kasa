@@ -7,12 +7,14 @@ import Footer from '../../Layouts/Footer/index';
 
 function About() {
     return (
-        <main>
+        <>
         <Header />
+        <main>
         <BannerAbout />
         <CollapsiblesAbout />
-        <Footer />
         </main>
+        <Footer />
+        </>
     )
 }
 
