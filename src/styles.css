@@ -1,24 +1,44 @@
+/*
+                   *               ---->   Style Kasa platform   <----                       *
+                   *    Part I - Generic styling (font, layouts, template components...)     *
+                   *    Part II - Styling for a specific page                                *
+                   *    Part III - Media queries                                             *
+*/
+
+/* 
+Part I - Generic styling -
+*/
+
+/*Font*/
 @font-face {
     font-family: "Montserrat";
     src: url(./../src/Assets/Fonts/montserratRegular.ttf);
 }
 
+/*Layout*/
 body {
     font-family: "Montserrat", sans-serif;
     margin: 0;
+    color: #FF6060;
 }
 
 .wrapper {
     box-sizing: border-box;
     margin: 0 auto;
     max-width: 1400px;
-    padding: 0 30px;
+    padding: 0 80px;
 }
 
 header .wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-top: 30px;
+    padding-bottom: 60px;
+}
+
+header img {
+    width: 200px;
 }
 
 nav ul {
@@ -26,9 +46,13 @@ nav ul {
     display: flex;
 }
 
+nav li:last-child {
+    padding-left: 60px;
+}
+
 nav li a {
     text-decoration: none;
-    font-size: 26px;
+    font-size: 22px;
     color: #FF6060;
 }
 
@@ -36,17 +60,48 @@ nav a.active {
     border-bottom: 2px #FF6060 solid;
 }
 
-
-
 footer {
     background-color: black;
     text-align: center;
 }
 
-footer p {
-    color: white;
+footer img {
+    padding-top: 50px;
+    padding-bottom: 20px;
 }
 
+footer p {
+    font-size: 17px;
+    color: white;
+    margin: 0;
+    padding-bottom: 30px;
+}
+
+/*Banner component */
+.banner {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.banner h1 {
+    color: white;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    bottom: 30%;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/*Slideshow component */
 .slideshow-container {
     min-height: 100vh;
     display: flex;
@@ -84,7 +139,6 @@ footer p {
     position: absolute;
 }
 
-
 .left {
     left: 0;
 }
@@ -98,4 +152,140 @@ footer p {
     color: white;
     text-align: center;
     z-index: 3;
+}
+
+/*Card component */
+.card a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #FF6060;
+}
+
+.card article {
+    border-radius: 10px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card h2 {
+    font-size: 16px;
+    color: white;
+    border: red solid 2px;
+    position: absolute;
+    top: 145px;
+}
+
+
+/*Collapsible component */
+.collapsible-button {
+    all: unset;
+    width: 100%;
+    height: 35px;
+    display: flex;
+    color:white;
+    background-color: #FF6060;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.collapsible-button p {
+    background-color: #F6F6F6;
+}
+
+
+/* 
+Part II - Page-specific styling -
+*/
+
+/*Home Page */
+
+.home-content section .wrapper {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.home-content section ul {
+    border-radius: 20px;
+    margin: 0;
+    background-color: #F6F6F6;
+    padding: 60px 30px;
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+}
+
+
+/*About Page */
+
+.about-content section .wrapper {
+    padding: 40px 100px;
+}
+
+
+
+/* 
+Part III - Media Queries -
+*/
+
+/*Screens between 769 and 992*/
+@media only screen and (max-width: 992px) {
+
+    .home-content section ul {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/*Screens of 768 pixels and below*/
+@media only screen and (max-width: 768px) {
+
+    .wrapper {
+        padding: 0 20px;
+    }
+
+    header .wrapper {
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+
+
+    header img {
+        width: 130px;
+    }
+    
+    nav li a {
+        font-size: 17px;
+        text-transform: uppercase;
+    }
+
+
+    footer p {
+        font-size: 12px;
+    }
+
+    .banner {
+        height: 130px;
+    }
+
+    .home-content section .wrapper {
+        padding-top: 0px;
+        padding-bottom: 20px;
+    }
+
+    .home-content section ul {
+        grid-template-columns: 1fr;
+        padding: 20px 0px;
+        background-color: white;
+        grid-row-gap: 20px;
+
+    }
 }

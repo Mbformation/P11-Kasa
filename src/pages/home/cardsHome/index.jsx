@@ -5,16 +5,18 @@ import accommodations from '../../../Data/accommodations.json';
 function CardsHome() {
     return (
         <section>
-            <ul>
-                {accommodations.map(({ id, title, cover}) => (
-                    <CardTemplate 
-                        key={id}
-                        id={id}
-                        title={title}
-                        cover={cover}
-                    />
-                ))}
-            </ul>
+            <div className='wrapper'>
+                <ul>
+                    {accommodations.map(({ id, title, cover}) => (
+                        <CardTemplate 
+                            key={id}
+                            id={id}
+                            title={title}
+                            cover={cover}
+                        />
+                    ))}
+                </ul>
+            </div>
         </section>
     )
 }

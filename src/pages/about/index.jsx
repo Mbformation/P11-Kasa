@@ -9,7 +9,7 @@ function About() {
     return (
         <>
         <Header />
-        <main>
+        <main className='about-content'>
         <BannerAbout />
         <CollapsiblesAbout />
         </main>

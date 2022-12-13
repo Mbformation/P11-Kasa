@@ -11,7 +11,7 @@ function Home() {
     return (
         <>
             <Header />
-            <main>
+            <main className='home-content'>
                 <BannerHome />
                 <CardsHome />
             </main>

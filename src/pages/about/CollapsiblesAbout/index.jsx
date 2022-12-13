@@ -6,28 +6,25 @@ function CollapsiblesAbout() {
 
     return (
         <section>
-            <div>
+            <div className='wrapper'>
                 <CollapsibleTemplate 
                 label='Fiabilité'>
                 <p>Les annonces postées sur Kasa garantissent une fiabilité totale. 
                 Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes.</p>
                 </CollapsibleTemplate>
-            </div>
-            <div>
+           
                 <CollapsibleTemplate 
                 label='Respect'>
                 <p>La bienveillance fait partie des valeurs fondatrices de Kasa. 
                 Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme.</p>
                 </CollapsibleTemplate>
-            </div>
-            <div>
+          
                 <CollapsibleTemplate 
                 label='Service'>
                 <p>Nos équipes se tiennent à votre disposition pour vous fournir une expérience parfaite. 
                 N'hésitez pas à nous contacter si vous avez la moindre question.</p>
                 </CollapsibleTemplate>
-            </div>
-            <div>
+           
                 <CollapsibleTemplate 
                 label='Sécurité'>
                 <p>La sécurité est la priorité de Kasa. 
