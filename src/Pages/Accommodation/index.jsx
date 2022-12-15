@@ -21,45 +21,54 @@ function Accommodation() {
     return (
         <>
         <Header />
-        <main>
+        <main className="accommodation-content">
+            <section className="slideshow">
+               
+                    * 
+                    <SlideshowAccommodation 
+                    accommodation={accommodation} />
+                    *
+            </section>
             <section>
-                
-                <SlideshowAccommodation 
-                accommodation={accommodation} />
-    
-                <article>
-                    <h1>{accommodation.title}</h1>
-                    <h2>{accommodation.location}</h2>
-                    <div>{accommodation.tags.map((tag, i) => (
-                        <p key={i}>{tag}</p>
-                    ))}
-                    </div>
-                </article>
-                <article>
-                    <div>
-                        <p>{accommodation.host.name}</p>
-                        <img src={accommodation.host.picture} alt='host' />
-                    </div>
-                    <div>{accommodation.rating}</div>
-                </article>
-                <article>
-                    <div>
-                        <CollapsibleTemplate
-                            label="Description">
-                            <p>{accommodation.description}</p>
-                        </CollapsibleTemplate>
-                    </div>
-                    <div>
-                        <CollapsibleTemplate
-                            label="Equipements">
-                            <p>{accommodation.equipments.map((equipment, i) => (
-                                <ul key={i}>
-                                    <li>{equipment}</li>
-                                </ul>
-                            ))}</p>
-                        </CollapsibleTemplate>
-                    </div>
-                </article>
+                <div className="wrapper">
+                   
+                        <h1>{accommodation.title}</h1>
+                        <h2>{accommodation.location}</h2>
+                        <div className="flex-row-container">
+                        <div className="tags-container">{accommodation.tags.map((tag, i) => (
+                            <p key={i}>{tag}</p>
+                        ))}
+                        </div>
+                        
+                   
+                    
+                        
+                            <p>{accommodation.host.name}</p>
+                            <div className="flex-column-container">
+                            <img src={accommodation.host.picture} alt='host' />
+                        </div>
+                        <div>{accommodation.rating}</div>
+                        
+                        </div>
+                    
+                        <div>
+                            <CollapsibleTemplate
+                                label="Description">
+                                <p>{accommodation.description}</p>
+                            </CollapsibleTemplate>
+                        </div>
+                        <div>
+                            <CollapsibleTemplate
+                                label="Equipements">
+                                <p>{accommodation.equipments.map((equipment, i) => (
+                                    <ul key={i}>
+                                        <li>{equipment}</li>
+                                    </ul>
+                                ))}</p>
+                            </CollapsibleTemplate>
+                        </div>
+                    
+                </div>
             </section>
         </main>
         <Footer />

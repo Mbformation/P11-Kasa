@@ -20,6 +20,7 @@ body {
     font-family: "Montserrat", sans-serif;
     margin: 0;
     color: #FF6060;
+    overflow-x: hidden;
 }
 
 .wrapper {
@@ -103,54 +104,63 @@ footer p {
 
 /*Slideshow component */
 .slideshow-container {
-    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 2px solid black;
+    height: 500px;
+}
 
+.style {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    bottom: 250px;
 }
 
 .carousel {
-    margin: 0 auto;
-    overflow: hidden;
-    max-width: 100%;
-    position: absolute;
+    height: 100%;
+    width: 100%;
+    border: 2px solid black;
 }
 
 .carousel-inner {
+    height: 100%;
+    width: 100%;
     white-space: nowrap;
     transition: ease 1s;
-    position: relative;
-
+    display: flex;
+    scroll-behavior: unset;
 }
 
 .carousel-item {
     display: inline-block;
     width: 100%;
+    height: 500px;
+}
 
+.carousel-item img {
+    box-sizing: border-box;
+    display: inline-block;
 }
 
 .carousel-control {
-    background-color: red;
+    background-color: transparent;
     border: none;
     display: inline-block;
-    top: calc(50% - 25px);
     cursor: pointer;
-    position: absolute;
+    margin: 0 80px;
 }
 
-.left {
-    left: 0;
-}
-
-.right {
-    right: 0;
+.carousel-icon {
+    width: 50px;
 }
 
 .carousel-counter{
     position: absolute;
     color: white;
-    text-align: center;
+    text-align:end ;
     z-index: 3;
 }
 
@@ -246,8 +256,66 @@ Part II - Page-specific styling -
 
 .about-content section .wrapper {
     padding: 40px 100px;
+    border: 2px solid black;
 }
 
+/*Not Found Page */
+
+.not-found-content section .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 180px;
+}
+
+.not-found-content section h1 {
+    font-size: 280px;
+    margin: 0;
+    padding-bottom: 40px;
+}
+
+.not-found-content section h2 {
+    font-size: 26px;
+    margin: 0;
+    padding-bottom: 110px;
+}
+
+.not-found-content section a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #FF6060;
+    border-bottom: 2px #FF6060 solid;
+    padding-top: 60px;
+}
+
+
+/*Accommodation Page */
+
+.accommodation-content h1 {
+    font-size: 30px;
+    margin: 0;
+}
+
+.accommodation-content h2 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.flex-row-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.flex-column-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.tags-container{
+    display: flex;
+    gap: 30px;
+}
 
 
 /* 
@@ -259,6 +327,21 @@ Part III - Media Queries -
 
     .home-content section ul {
         grid-template-columns: 1fr 1fr;
+    }
+
+
+    .not-found-content section h1 {
+        font-size: 180px;
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
+
+    .not-found-content section h2 {
+        font-size: 23px;
+    }
+
+    .not-found-content section a {
+        font-size: 18px;
     }
 }
 
@@ -304,5 +387,23 @@ Part III - Media Queries -
         background-color: white;
         grid-row-gap: 20px;
 
+    }
+
+
+
+    .not-found-content section h1 {
+        font-size: 96px;
+        padding-top: 150px;
+        padding-bottom: 20px;
+    }
+             
+    .not-found-content section h2 {
+        font-size: 18px;
+        padding-bottom: 110px;
+    }
+
+    .not-found-content section a {
+        font-size: 14px;
+        padding-top: 60px;
     }
 }
