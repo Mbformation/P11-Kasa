@@ -18,39 +18,51 @@ function Accommodation() {
         )
     }
     
+    const stars = [];
+    for (let i = 1; i <= 5; i++)
+    {
+        stars.push(
+            <svg className="rating-stars" width="30" height="30"  viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" key={i}>
+            <path d="M18.645 12L15 0L11.355 12H0L9.27 18.615L5.745 30L15 22.965L24.27 30L20.745 18.615L30 12H18.645Z"
+                fill={(accommodation.rating >= i) ? '#FF6060': '#E3E3E3'} />
+            </svg>
+        )
+    }
+
     return (
         <>
         <Header />
         <main className="accommodation-content">
             <section className="slideshow">
-               
-                    * 
+                <div className="wrapper">
                     <SlideshowAccommodation 
                     accommodation={accommodation} />
-                    *
+                </div>
+                    
             </section>
             <section>
                 <div className="wrapper">
-                   
-                        <h1>{accommodation.title}</h1>
-                        <h2>{accommodation.location}</h2>
-                        <div className="flex-row-container">
-                        <div className="tags-container">{accommodation.tags.map((tag, i) => (
-                            <p key={i}>{tag}</p>
-                        ))}
+                    <div className="flex-container">
+                        <div className="flex-column-container">
+                            <h1>{accommodation.title}</h1>
+                            <h2>{accommodation.location}</h2>
+                            <div className="flex-row-container">
+                                <div className="tags-container">{accommodation.tags.map((tag, i) => (
+                                    <p key={i}>{tag}</p>
+                                ))}
+                                </div>
+                            </div>
                         </div>
-                        
-                   
-                    
-                        
-                            <p>{accommodation.host.name}</p>
-                            <div className="flex-column-container">
-                            <img src={accommodation.host.picture} alt='host' />
+                        <div className="flex-column-container">
+                            <div className="flex-row-container host-container">
+                                <p className="host-name">{accommodation.host.name}</p>
+                                <div className="host-image-container">
+                                    <img src={accommodation.host.picture} alt='host' />
+                                </div>
+                                <div className="rating-stars">{stars}</div>
+                            </div>
                         </div>
-                        <div>{accommodation.rating}</div>
-                        
-                        </div>
-                    
+                    </div>
                         <div>
                             <CollapsibleTemplate
                                 label="Description">

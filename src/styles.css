@@ -27,19 +27,19 @@ body {
     box-sizing: border-box;
     margin: 0 auto;
     max-width: 1400px;
-    padding: 0 80px;
+    padding: 0 100px;
 }
 
 header .wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 30px;
+    padding-top: 40px;
     padding-bottom: 60px;
 }
 
 header img {
-    width: 200px;
+    height: 68px;
 }
 
 nav ul {
@@ -53,7 +53,7 @@ nav li:last-child {
 
 nav li a {
     text-decoration: none;
-    font-size: 22px;
+    font-size: 24px;
     color: #FF6060;
 }
 
@@ -67,12 +67,12 @@ footer {
 }
 
 footer img {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    padding-top: 66px;
+    padding-bottom: 28px;
 }
 
 footer p {
-    font-size: 17px;
+    font-size: 24px;
     color: white;
     margin: 0;
     padding-bottom: 30px;
@@ -83,7 +83,7 @@ footer p {
     width: 100%;
     height: 200px;
     position: relative;
-    border-radius: 10px;
+    border-radius: 25px;
     overflow: hidden;
 }
 
@@ -107,26 +107,23 @@ footer p {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid black;
-    height: 500px;
+    position: relative;
 }
 
 .style {
     position: absolute;
     display: flex;
     justify-content: space-between;
-    width: 100vw;
-    bottom: 250px;
+    width: 100%;
 }
 
 .carousel {
-    height: 100%;
-    width: 100%;
-    border: 2px solid black;
+    width: 100%; 
+    overflow: hidden; 
+    border-radius: 25px;
 }
 
 .carousel-inner {
-    height: 100%;
     width: 100%;
     white-space: nowrap;
     transition: ease 1s;
@@ -135,9 +132,13 @@ footer p {
 }
 
 .carousel-item {
+    opacity: 1;
     display: inline-block;
     width: 100%;
-    height: 500px;
+    height: 415px;
+    min-width: calc(100vw - (100vw - 100%));
+    background-size: cover;
+    background-position: center;
 }
 
 .carousel-item img {
@@ -150,11 +151,10 @@ footer p {
     border: none;
     display: inline-block;
     cursor: pointer;
-    margin: 0 80px;
 }
 
 .carousel-icon {
-    width: 50px;
+    width: 40px;
 }
 
 .carousel-counter{
@@ -162,6 +162,7 @@ footer p {
     color: white;
     text-align:end ;
     z-index: 3;
+    bottom: 10px;
 }
 
 /*Card component */
@@ -202,29 +203,40 @@ footer p {
 .collapsible-button-label {
     all: unset;
     width: 100%;
-    height: 35px;
+    height: 52px;
     display: flex;
     justify-content: space-between;
-    padding: 10px 20px;
+    align-items: center;
     color:white;
     background-color: #FF6060;
-    font-size: 20px;
+    font-size: 18px;
     border-radius: 5px;
     cursor: pointer;
+    box-sizing: border-box;
+    padding-left: 20px;
 }
 
 .collapsible-button-icon {
-    width: 100px;
+    height: 30px;
+    width: 25px;
+    padding-right: 12px;
 }
 
 .collapsible-button-content {
-    background-color: #F6F6F6;
+    background: #F7F7F7;
 }
 
 .collapsible-button-content p {
+    font-size: 18px;
     margin: 0;
     padding: 30px 15px 10px 10px;
     line-height: 25px;
+}
+
+.collapsible-button-content p ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 
@@ -240,9 +252,9 @@ Part II - Page-specific styling -
 }
 
 .home-content section ul {
-    border-radius: 20px;
+    border-radius: 25px;
     margin: 0;
-    background-color: #F6F6F6;
+    background-color: #F7F7F7;
     padding: 60px 30px;
     list-style-type: none;
     display: grid;
@@ -255,9 +267,11 @@ Part II - Page-specific styling -
 /*About Page */
 
 .about-content section .wrapper {
-    padding: 40px 100px;
-    border: 2px solid black;
+    box-sizing: border-box;
+    padding: 40px 200px;
 }
+
+
 
 /*Not Found Page */
 
@@ -265,46 +279,52 @@ Part II - Page-specific styling -
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 180px;
+    padding-bottom: 160px;
 }
 
 .not-found-content section h1 {
-    font-size: 280px;
+    font-size: 288px;
     margin: 0;
-    padding-bottom: 40px;
+    padding-bottom: 66px;
 }
 
 .not-found-content section h2 {
-    font-size: 26px;
+    font-size: 36px;
     margin: 0;
-    padding-bottom: 110px;
+    padding-bottom: 182px;
 }
 
 .not-found-content section a {
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18px;
     color: #FF6060;
     border-bottom: 2px #FF6060 solid;
-    padding-top: 60px;
 }
 
 
 /*Accommodation Page */
 
 .accommodation-content h1 {
-    font-size: 30px;
+    padding-top: 30px;
+    padding-bottom: 5px;
+    font-size: 36px;
     margin: 0;
 }
 
 .accommodation-content h2 {
+    padding-bottom: 20px;
     font-size: 18px;
     margin: 0;
+}
+
+.accommodation-content .flex-row-or-column-container {
+    display: flex;
+    justify-content: space-between;
 }
 
 .flex-row-container {
     display: flex;
     justify-content: space-between;
-    width: 100%;
 }
 
 .flex-column-container {
@@ -312,9 +332,46 @@ Part II - Page-specific styling -
     flex-direction: column;
 }
 
+.host-container {
+    padding-bottom: 30px;
+}
+
+.host-name {
+    width: 4px;
+    border: 2px solid black;
+    margin: 0;
+    padding-right: 30px;
+    border-left: 30px;
+}
+
+.host-image-container{
+    border-radius: 50%;
+    height: 64px;
+    overflow: hidden;
+}
+
+.host-image-container img {
+    object-fit: cover;
+    width: 64px;
+}
+
 .tags-container{
     display: flex;
     gap: 30px;
+}
+
+.tags-container p {
+    font-size: 14px;
+    border-radius: 10px;
+    background-color: #FF6060;
+    color: white;
+    padding: 3px 22px 2px 22px;
+}
+
+.rating-stars {
+    height: 30px;
+    width: 196px;
+    display: flex;
 }
 
 
@@ -324,6 +381,10 @@ Part III - Media Queries -
 
 /*Screens between 769 and 992*/
 @media only screen and (max-width: 992px) {
+
+    .carousel-item {
+        max-height: 350px;
+    }
 
     .home-content section ul {
         grid-template-columns: 1fr 1fr;
@@ -354,27 +415,83 @@ Part III - Media Queries -
 
     header .wrapper {
         padding-top: 20px;
-        padding-bottom: 10px;
+        padding-bottom: 30px;
     }
 
 
     header img {
-        width: 130px;
+        height: 43px;
     }
     
     nav li a {
-        font-size: 17px;
+        font-size: 12px;
         text-transform: uppercase;
+    }
+
+    nav li:last-child {
+        padding-left: 20px;
     }
 
 
     footer p {
         font-size: 12px;
+        padding-bottom: 62px;
+    }
+
+    footer img {
+        padding-top: 62px;
+        padding-bottom: 30px;
+        height: 39px;
     }
 
     .banner {
         height: 130px;
+        border-radius: 10px;
     }
+
+    .collapsible {
+        padding-bottom: 20px;
+    }
+
+    .collapsible-button-label {
+        height: 30px;
+        font-size: 13px;
+        line-height: 18.54px;
+        padding-left: 12px;
+    }
+
+    .collapsible-button-icon {
+        width: 13px;
+        height: 20px;
+        padding-right: 7px;
+    }
+
+    .collapsible-button-content {
+        font-size: 12px;
+    }
+
+    .collapsible-button-content p {
+        padding: 10px 15px 10px 10px;
+        line-height: 17px;
+    }
+
+    
+
+    .carousel {
+        border-radius: 10px;
+    }
+
+
+    .carousel-item {
+        max-height: 250px;
+    } 
+
+    .carousel-icon {
+        width: 15px;
+    }
+    
+    
+
 
     .home-content section .wrapper {
         padding-top: 0px;
@@ -389,21 +506,75 @@ Part III - Media Queries -
 
     }
 
+    .about-content section .wrapper {
+        padding: 20px 20px;
+    }
+
+
 
 
     .not-found-content section h1 {
         font-size: 96px;
         padding-top: 150px;
-        padding-bottom: 20px;
+        padding-bottom: 11px;
     }
              
     .not-found-content section h2 {
         font-size: 18px;
-        padding-bottom: 110px;
+        padding-bottom: 133px;
     }
 
     .not-found-content section a {
         font-size: 14px;
-        padding-top: 60px;
+    }
+
+
+
+    .accommodation-content h1 {
+        font-size: 18px;
+        line-height: 142.6%;
+        padding-top: 15px;
+        padding-bottom: 10px;
+    }
+
+    .accommodation-content h2 {
+        font-size: 14px;
+        padding-bottom: 0;
+    }
+
+    .accommodation-content .flex-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .host-name {
+        font-size: 12px;
+        line-height: 142.6%;
+    }
+
+    .host-image-container {
+        height: 32px;
+    }
+
+    .host-image-container img {
+        width: 32px;
+    }
+
+    .tags-container {
+        gap: 10px;
+    }
+
+    .tags-container p {
+        text-align: center;
+        min-width: 84px;
+        font-size: 10px;
+        padding: 4px 5px;
+        border-radius: 5px;
+    }
+
+    .rating-stars {
+        height: 15px;
+        width: 98px;
+        display: flex;
     }
 }

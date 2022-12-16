@@ -30,9 +30,7 @@ function SlideshowTemplate({pictures, title})
                 <div className="carousel">
                     <div className="carousel-inner" style={{transform: `translateX(${-index * 100}%)`}}>
                         {pictures.map((picture, i) => (
-                            <div className="carousel-item">
-                                <img key={i} src={picture} alt={title} />
-                            </div> 
+                            <div style={{ backgroundImage: `url("${picture}")` }} className="carousel-item" key={i} />
                         ))}
                     </div>
                 </div>
