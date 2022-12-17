@@ -63,6 +63,7 @@ function Accommodation() {
                             <div className="rating-stars">{stars}</div>
                         </div>
                     </div>
+                        <div className="collapsibles-container">
                             <CollapsibleTemplate
                                 label="Description">
                                 <p>{accommodation.description}</p>
@@ -73,6 +74,7 @@ function Accommodation() {
                                     <p key={i}>{equipment}</p>
                                 ))}</div>
                             </CollapsibleTemplate>
+                        </div>
                 </div>
             </section>
         </main>

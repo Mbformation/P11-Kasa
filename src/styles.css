@@ -390,7 +390,7 @@ Part II - Page-specific styling -
 .basic-information {
     display: flex;
     justify-content: space-between;
-    padding-top: 15px;
+    padding-top: 20px;
 }
 
 .flex-row-container {
@@ -458,6 +458,11 @@ Part II - Page-specific styling -
     display: flex;
 }
 
+.collapsibles-container {
+    display: flex;
+    gap: 75px;
+}
+
 
 /* 
 Part III - Media Queries -
@@ -501,6 +506,10 @@ Part III - Media Queries -
         flex-direction: row-reverse;
         justify-content: space-between;
         align-items: center;
+    }
+
+    .collapsibles-container {
+        gap: 30px;
     }
 }
 
@@ -680,7 +689,7 @@ Part III - Media Queries -
     .accommodation-content h2 {
         font-size: 14px;
         padding-bottom: 0;
-        margin-bottom: 24px;
+        margin-bottom: 13px;
     }
 
     .basic-information {
@@ -701,6 +710,7 @@ Part III - Media Queries -
     .host-name {
         font-size: 12px;
         line-height: 142.6%;
+        margin-bottom: 16px;
     }
 
     .host-image-container {
@@ -727,5 +737,10 @@ Part III - Media Queries -
         height: 15px;
         width: 98px;
         display: flex;
+    }
+
+    .collapsibles-container {
+        flex-direction: column;
+        gap: 0;
     }
 }
