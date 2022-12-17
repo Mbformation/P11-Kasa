@@ -10,8 +10,8 @@ function About() {
         <>
         <Header />
         <main className='about-content'>
-        <BannerAbout />
-        <CollapsiblesAbout />
+            <BannerAbout />
+            <CollapsiblesAbout />
         </main>
         <Footer />
         </>

@@ -69,11 +69,9 @@ function Accommodation() {
                             </CollapsibleTemplate>
                             <CollapsibleTemplate
                                 label="Equipements">
-                                <p>{accommodation.equipments.map((equipment, i) => (
-                                    <ul key={i}>
-                                        <li>{equipment}</li>
-                                    </ul>
-                                ))}</p>
+                                <div>{accommodation.equipments.map((equipment, i) => (
+                                    <p key={i}>{equipment}</p>
+                                ))}</div>
                             </CollapsibleTemplate>
                 </div>
             </section>
