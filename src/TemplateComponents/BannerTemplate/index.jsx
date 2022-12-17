@@ -5,9 +5,9 @@ function BannerTemplate(props) {
 
     return(
         <div className='wrapper'>
-            <div className='banner'>
+            <div className='banner' style={{ backgroundImage: `url(${props.src})` }}>
+                <div class="banner-overlay"></div>
                 <h1>{props.slogan}</h1>
-                <img src={props.src} alt={props.alt} />
             </div>
         </div>
     )

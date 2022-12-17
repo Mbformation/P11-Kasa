@@ -63,13 +63,10 @@ function Accommodation() {
                             <div className="rating-stars">{stars}</div>
                         </div>
                     </div>
-                        <div>
                             <CollapsibleTemplate
                                 label="Description">
                                 <p>{accommodation.description}</p>
                             </CollapsibleTemplate>
-                        </div>
-                        <div>
                             <CollapsibleTemplate
                                 label="Equipements">
                                 <p>{accommodation.equipments.map((equipment, i) => (
@@ -78,8 +75,6 @@ function Accommodation() {
                                     </ul>
                                 ))}</p>
                             </CollapsibleTemplate>
-                        </div>
-                    
                 </div>
             </section>
         </main>

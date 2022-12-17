@@ -7,7 +7,6 @@ function BannerHome() {
         <BannerTemplate
             slogan='Chez vous, partout et ailleurs'
             src={ImgBannerHomePath} 
-            alt="Vue panoramique d'un littoral rocheux"
             />
     )
 }

@@ -5,9 +5,8 @@ import ImgBannerAboutPath from '../../../Assets/Images/imgBannerAbout.webp';
 function BannerAbout() {
     return (
         <BannerTemplate
-            slogan='À propos'
+            slogan=''
             src={ImgBannerAboutPath} 
-            alt="Vue panoramique sur les montagnes"
             />
     )
 }
