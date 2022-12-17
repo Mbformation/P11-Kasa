@@ -27,7 +27,7 @@ body {
     box-sizing: border-box;
     margin: 0 auto;
     max-width: 1400px;
-    padding: 0 100px;
+    padding: 0 80px;
 }
 
 header .wrapper {
@@ -45,6 +45,8 @@ header img {
 nav ul {
     list-style-type: none;
     display: flex;
+    margin: 0;
+    padding: 0;
 }
 
 nav li:last-child {
@@ -81,13 +83,16 @@ footer p {
 /*Banner component */
 .banner {
     width: 100%;
-    height: 200px;
+    height: 223px;
     position: relative;
     border-radius: 25px;
     overflow: hidden;
 }
 
 .banner h1 {
+    font-size: 48px;
+    margin: 0;
+    padding: 0;
     color: white;
     position: absolute;
     top: 30%;
@@ -99,7 +104,9 @@ footer p {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    
 }
+
 
 
 /*Slideshow component */
@@ -174,7 +181,7 @@ footer p {
 
 .card article {
     border-radius: 10px;
-    height: 300px;
+    height: 340px;
     overflow: hidden;
     position: relative;
 }
@@ -198,6 +205,7 @@ footer p {
 .collapsible {
     padding-bottom: 30px;
     width: 100%;
+    overflow: hidden;
 }
 
 .collapsible-button-label {
@@ -214,16 +222,32 @@ footer p {
     cursor: pointer;
     box-sizing: border-box;
     padding-left: 20px;
+    padding-right: 12px;
 }
 
 .collapsible-button-icon {
     height: 30px;
     width: 25px;
-    padding-right: 12px;
+    /*padding-right: 12px;*/
+    transition: transform 0.2s linear;
+    transform: rotate(0deg);
+}
+
+.rotate-open {
+    transform: rotate(180deg);
+    transition: transform 0.2s linear;
 }
 
 .collapsible-button-content {
     background: #F7F7F7;
+    border-radius: 0 0 10px 10px;
+    transform: translateY(-500px);
+    transition: transform 0.2 ease;
+}
+
+.content-open {
+    transform: translateY(0px);
+    transition: transform 0.2 ease;
 }
 
 .collapsible-button-content p {
@@ -255,7 +279,7 @@ Part II - Page-specific styling -
     border-radius: 25px;
     margin: 0;
     background-color: #F7F7F7;
-    padding: 60px 30px;
+    padding: 55px 30px;
     list-style-type: none;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -305,7 +329,7 @@ Part II - Page-specific styling -
 /*Accommodation Page */
 
 .accommodation-content h1 {
-    padding-top: 30px;
+    padding-top: 10px;
     padding-bottom: 5px;
     font-size: 36px;
     margin: 0;
@@ -317,9 +341,10 @@ Part II - Page-specific styling -
     margin: 0;
 }
 
-.accommodation-content .flex-row-or-column-container {
+.basic-information {
     display: flex;
     justify-content: space-between;
+    padding-top: 15px;
 }
 
 .flex-row-container {
@@ -332,16 +357,21 @@ Part II - Page-specific styling -
     flex-direction: column;
 }
 
-.host-container {
-    padding-bottom: 30px;
+.host-profile {
+    display:flex;
+    justify-content: flex-end;
+    align-items:center;
+    padding-bottom: 15px;
 }
 
 .host-name {
-    width: 4px;
-    border: 2px solid black;
-    margin: 0;
-    padding-right: 30px;
-    border-left: 30px;
+    font-size: 18px;
+    line-height: 25.5px;
+    width:  50px; 
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
 }
 
 .host-image-container{
@@ -357,7 +387,8 @@ Part II - Page-specific styling -
 
 .tags-container{
     display: flex;
-    gap: 30px;
+    gap: 10px;
+    padding-bottom: 24px;
 }
 
 .tags-container p {
@@ -366,6 +397,7 @@ Part II - Page-specific styling -
     background-color: #FF6060;
     color: white;
     padding: 3px 22px 2px 22px;
+    white-space: nowrap;
 }
 
 .rating-stars {
@@ -381,6 +413,10 @@ Part III - Media Queries -
 
 /*Screens between 769 and 992*/
 @media only screen and (max-width: 992px) {
+
+    .wrapper {
+        padding: 0 50px;
+    }
 
     .carousel-item {
         max-height: 350px;
@@ -403,6 +439,16 @@ Part III - Media Queries -
 
     .not-found-content section a {
         font-size: 18px;
+    }
+
+    .basic-information {
+        flex-direction: column;
+    }
+
+    .secondary-information {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
     }
 }
 
@@ -429,7 +475,7 @@ Part III - Media Queries -
     }
 
     nav li:last-child {
-        padding-left: 20px;
+        padding-left: 10px;
     }
 
 
@@ -445,8 +491,12 @@ Part III - Media Queries -
     }
 
     .banner {
-        height: 130px;
+        height: 111px;
         border-radius: 10px;
+    }
+
+    .banner h1 {
+        font-size: 24px;
     }
 
     .collapsible {
@@ -458,20 +508,22 @@ Part III - Media Queries -
         font-size: 13px;
         line-height: 18.54px;
         padding-left: 12px;
+        padding-right: 7px;
     }
 
     .collapsible-button-icon {
         width: 13px;
         height: 20px;
-        padding-right: 7px;
     }
 
     .collapsible-button-content {
         font-size: 12px;
+        border-radius: 0 0 5px 5px;
     }
 
     .collapsible-button-content p {
-        padding: 10px 15px 10px 10px;
+        font-size: 12px;
+        padding: 15px 15px 10px 10px;
         line-height: 17px;
     }
 
@@ -483,11 +535,15 @@ Part III - Media Queries -
 
 
     .carousel-item {
-        max-height: 250px;
+        height: 255px;
     } 
 
     .carousel-icon {
         width: 15px;
+    }
+
+    .card article {
+        height: 255px;
     }
     
     
@@ -508,6 +564,10 @@ Part III - Media Queries -
 
     .about-content section .wrapper {
         padding: 20px 20px;
+    }
+
+    .about-content .banner {
+        height: 223px;
     }
 
 
@@ -542,9 +602,19 @@ Part III - Media Queries -
         padding-bottom: 0;
     }
 
-    .accommodation-content .flex-container {
-        display: flex;
+    .basic-information {
         flex-direction: column;
+        padding-top: 0px;
+    }
+
+    .secondary-information {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .host-profile {
+        padding-bottom: 0;
     }
 
     .host-name {
@@ -562,6 +632,7 @@ Part III - Media Queries -
 
     .tags-container {
         gap: 10px;
+        padding-bottom: 0;
     }
 
     .tags-container p {
@@ -570,6 +641,8 @@ Part III - Media Queries -
         font-size: 10px;
         padding: 4px 5px;
         border-radius: 5px;
+        margin-top: 10px;
+        margin-bottom: 0px;
     }
 
     .rating-stars {

@@ -42,25 +42,25 @@ function Accommodation() {
             </section>
             <section>
                 <div className="wrapper">
-                    <div className="flex-container">
-                        <div className="flex-column-container">
+                    <div className="basic-information">
+                        <div>
                             <h1>{accommodation.title}</h1>
                             <h2>{accommodation.location}</h2>
-                            <div className="flex-row-container">
+                            <div>
                                 <div className="tags-container">{accommodation.tags.map((tag, i) => (
                                     <p key={i}>{tag}</p>
                                 ))}
                                 </div>
                             </div>
                         </div>
-                        <div className="flex-column-container">
-                            <div className="flex-row-container host-container">
+                        <div className="secondary-information">
+                            <div className="host-profile">
                                 <p className="host-name">{accommodation.host.name}</p>
                                 <div className="host-image-container">
                                     <img src={accommodation.host.picture} alt='host' />
-                                </div>
-                                <div className="rating-stars">{stars}</div>
+                                </div>  
                             </div>
+                            <div className="rating-stars">{stars}</div>
                         </div>
                     </div>
                         <div>
