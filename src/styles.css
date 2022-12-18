@@ -359,6 +359,7 @@ Part II - Page-specific styling -
 }
 
 .not-found-content section h2 {
+    text-align: center;
     font-size: 36px;
     margin: 0;
     padding-bottom: 182px;

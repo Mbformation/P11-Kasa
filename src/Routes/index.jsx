@@ -5,17 +5,18 @@ import About from '../Pages/About/index';
 import Accommodation from '../Pages/Accommodation/index';
 import NotFound from '../Pages/NotFound/index';
 
+// RoutesTree component centralises routes to all the different pages
 function RoutesTree() {
     return (
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />}/>
-          <Route path="/about" element={<About />}/>
-          <Route path="/accommodation/:id" element={<Accommodation />}/>
-          <Route path='*' element={<NotFound />} />
-        </Routes>
-      </Router>
-    );
-  }
+        <Router>
+            <Routes>
+                <Route path="/" element={<Home />}/>
+                <Route path="/about" element={<About />}/>
+                <Route path="/accommodation/:id" element={<Accommodation />}/>
+                <Route path='*' element={<NotFound />} />
+            </Routes>
+        </Router>
+    )
+}
   
-  export default RoutesTree;
+export default RoutesTree;

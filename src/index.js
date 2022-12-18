@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './app';
+import App from './app'; // Import App component to pass it to .render method
 import reportWebVitals from './reportWebVitals';
-require('./styles.css');
+require('./styles.css'); // Import css styling
 
+// Rendering the react element into the DOM
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  // using React.StrictMode tool to detect potential issues in the application
+  // app component centralises all react elements for Kasa app
   <React.StrictMode>
     <App />
   </React.StrictMode>
@@ -15,5 +18,3 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
-
-// dossiers: git rm -rf --cached layouts  fichiers: git mv layouts Layouts    

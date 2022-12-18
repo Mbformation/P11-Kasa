@@ -1,9 +1,9 @@
 import React from 'react';
 
-
+// BannerTemplate component
 function BannerTemplate(props) {
 
-    return(
+    return (
         <div className='wrapper'>
             <div className='banner' style={{ backgroundImage: `url(${props.src})` }}>
                 <div className='banner-overlay'></div>

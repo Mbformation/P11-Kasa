@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 
 
+// CollapsibleTemplate component
 function CollapsibleTemplate(props) {
     const [isOpen, setIsOpen] = useState(false)
     
-    return(
+    return (
         <div className={`${(isOpen) ? 'collapsible' : 'collapsible collapsible-close-height'}`}>
             <button className="collapsible-button-label" onClick={() => setIsOpen(!isOpen)}>
                 {props.label}

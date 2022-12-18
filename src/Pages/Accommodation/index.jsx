@@ -1,23 +1,26 @@
 import React from "react";
+// import Navigate component for page redirection
+// import useParams hook to get id from query string
 import { Navigate, useParams } from 'react-router-dom';
-import accommodations from '../../Data/accommodations.json';
-import Header from '../../Layouts/Header/index';
-import SlideshowAccommodation from "./SlideshowAccommodation/index";
-import CollapsibleTemplate from "../../TemplateComponents/CollapsibleTemplate";
-import Footer from '../../Layouts/Footer/index';
+import accommodations from '../../Data/accommodations.json'; // import accommodations JSON data
+import Header from '../../Layouts/Header/index'; // import Header component
+import SlideshowAccommodation from "./SlideshowAccommodation/index"; // import Slideshow component
+import CollapsibleTemplate from "../../TemplateComponents/CollapsibleTemplate"; // import Collapsible component
+import Footer from '../../Layouts/Footer/index'; // import Footer component
 
-
-
+// Accommodation component containing all elements for Accommodation page
 function Accommodation() {
-    const {id} = useParams()
-    const accommodation = accommodations.find(accommodation => accommodation.id === id)
+    const {id} = useParams() // get id from useParams hook
+    // assess if id matches an id in accommodations data file 
+    const accommodation = accommodations.find(accommodation => accommodation.id === id)  
 
-    if (!accommodation) {
+    if (!accommodation) { // if there is no match
         return (
+            // redirect to Not found page
             <Navigate replace to="/notfound" />
         )
     }
-    
+    // Loop for coloring stars according to rating value in accommodations data
     const stars = [];
     for (let i = 1; i <= 5; i++)
     {
@@ -31,38 +34,36 @@ function Accommodation() {
 
     return (
         <>
-        <Header />
-        <main className="accommodation-content">
-            <section className="slideshow">
-                <div className="wrapper">
-                    <SlideshowAccommodation 
-                    accommodation={accommodation} />
-                </div>
-                    
-            </section>
-            <section>
-                <div className="wrapper">
-                    <div className="basic-information">
-                        <div>
-                            <h1>{accommodation.title}</h1>
-                            <h2>{accommodation.location}</h2>
+            <Header />
+            <main className="accommodation-content">
+                <section className="slideshow">
+                    <div className="wrapper">
+                        <SlideshowAccommodation 
+                        accommodation={accommodation} />
+                    </div>       
+                </section>
+                <section>
+                    <div className="wrapper">
+                        <div className="basic-information">
                             <div>
-                                <div className="tags-container">{accommodation.tags.map((tag, i) => (
-                                    <p key={i}>{tag}</p>
-                                ))}
+                                <h1>{accommodation.title}</h1>
+                                <h2>{accommodation.location}</h2>
+                                <div>
+                                    <div className="tags-container">{accommodation.tags.map((tag, i) => (
+                                        <p key={i}>{tag}</p>))}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="secondary-information">
-                            <div className="host-profile">
-                                <p className="host-name">{accommodation.host.name}</p>
-                                <div className="host-image-container">
-                                    <img src={accommodation.host.picture} alt='host' />
-                                </div>  
+                            <div className="secondary-information">
+                                <div className="host-profile">
+                                    <p className="host-name">{accommodation.host.name}</p>
+                                    <div className="host-image-container">
+                                        <img src={accommodation.host.picture} alt='host' />
+                                    </div>  
+                                </div>
+                                <div className="rating-stars">{stars}</div>
                             </div>
-                            <div className="rating-stars">{stars}</div>
                         </div>
-                    </div>
                         <div className="collapsibles-container">
                             <CollapsibleTemplate
                                 label="Description">
@@ -71,14 +72,14 @@ function Accommodation() {
                             <CollapsibleTemplate
                                 label="Equipements">
                                 <div>{accommodation.equipments.map((equipment, i) => (
-                                    <p key={i}>{equipment}</p>
-                                ))}</div>
+                                    <p key={i}>{equipment}</p>))}
+                                </div>
                             </CollapsibleTemplate>
                         </div>
-                </div>
-            </section>
-        </main>
-        <Footer />
+                    </div>
+                </section>
+            </main>
+            <Footer />
         </>
     )
 }
