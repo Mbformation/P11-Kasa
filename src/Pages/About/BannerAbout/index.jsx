@@ -8,7 +8,6 @@ import ImgBannerAboutPath from '../../../Assets/Images/imgBannerAbout.webp';
 function BannerAbout() {
     return (
         <BannerTemplate
-            slogan=''
             src={ImgBannerAboutPath} 
         />
     )

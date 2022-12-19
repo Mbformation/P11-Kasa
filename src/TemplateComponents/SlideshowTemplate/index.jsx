@@ -2,7 +2,7 @@ import {useState} from "react";
 
 
 // SlideshowTemplate component
-function SlideshowTemplate({pictures, title}) 
+function SlideshowTemplate({pictures}) 
 {
     const [index, setindex] = useState(0);
     
@@ -17,7 +17,7 @@ function SlideshowTemplate({pictures, title})
 
     function next(){
         if (index === pictures.length - 1){
-         setindex(0)   
+            setindex(0)   
         }else
         {
             let next = index + 1;

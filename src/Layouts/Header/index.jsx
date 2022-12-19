@@ -13,6 +13,7 @@ function Header() {
                             <NavLink 
                                 to="/"
                                 className={({ isActive }) => (isActive ? 'link active' : 'link')}
+                                title="Aller sur la page d'accueil"
                             >
                             Accueil
                             </NavLink>    
