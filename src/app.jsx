@@ -3,9 +3,7 @@ import RoutesTree from './Routes/index'; // importing RoutesTree containing rout
 // App component
 function App() {
   return (
-    <>
       <RoutesTree />
-    </>
   );
 }
 

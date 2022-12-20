@@ -6,7 +6,7 @@ function Header() {
     return(
         <header>
             <div className="wrapper">
-                <Link to="/"><img src={logoHeader} alt='logo-kasa' /></Link>
+                <Link to="/"><img src={logoHeader} alt='logo-kasa' title="Aller sur la page d'accueil" /></Link>
                 <nav>
                     <ul>
                         <li>
@@ -15,15 +15,16 @@ function Header() {
                                 className={({ isActive }) => (isActive ? 'link active' : 'link')}
                                 title="Aller sur la page d'accueil"
                             >
-                            Accueil
+                                Accueil
                             </NavLink>    
                         </li>
                         <li>
                             <NavLink 
                                 to="/about"
                                 className={({ isActive }) => (isActive ? 'link active' : 'link')}
+                                title="Aller sur la page à propos"
                             >
-                            À propos
+                                À propos
                             </NavLink> 
                         </li>
                     </ul>
